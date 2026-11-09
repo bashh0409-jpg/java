@@ -9,15 +9,11 @@ npm run dev
 ```
 Open http://localhost:3000
 
-## Run Java examples
-The Run button compiles and executes the topic's saved code in an isolated Docker container. Install and start Docker, then build the runner image once:
-```
-docker build -t java-notes-runner -f docker/java-runner.Dockerfile .
-```
-The runner has no network access, a read-only filesystem, limited CPU/memory/processes, and a short execution timeout. Code is selected by topic on the server; the API does not accept arbitrary source code.
+## Example outputs
+The Show output button displays the saved sample output for each code topic. It does not execute Java or require Docker.
 
 ## Add content
-- New topic: add an object to `content/topics.ts` (`section`, `slug`, `title`, plus optional `code`, `run`, `points`, `callout`, `visual`, `tip`). Use `run` when the displayed code is a fragment and needs a complete Java program for execution.
+- New topic: add an object to `content/topics.ts` (`section`, `slug`, `title`, plus optional `code`, `output`, `points`, `callout`, `visual`, `tip`).
 - New section: add it to `sections` in `content/index.ts`, then add topics with that `section`.
 
 ## Reusable components (`components/`)

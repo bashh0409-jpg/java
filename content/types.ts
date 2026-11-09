@@ -9,7 +9,7 @@ export type Topic = {
   title: string;
   tip?: string;
   code?: string[];
-  run?: string[];
+  output?: string;
   points?: { title: string; text: string }[];
   callout?: string;
   visual?: Visual;

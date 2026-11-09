@@ -18,7 +18,7 @@ export function TopicView({ topic }: { topic: Topic }) {
       {v?.type === "array" && <ArrayBoxes values={v.values} highlight={v.highlight} />}
       {v?.type === "table" && <DataTable headers={v.headers} rows={v.rows} />}
       {v?.type === "tree" && <Tree nodes={v.nodes} />}
-      {topic.code && <CodeBlock code={topic.code} section={topic.section} slug={topic.slug} />}
+      {topic.code && <CodeBlock code={topic.code} output={topic.output} />}
       {topic.points && (
         <div className="my-6 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5">
           {topic.points.map((p, i) => (

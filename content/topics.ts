@@ -64,6 +64,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "new datatype[intExp]",
+    "output": "",
     "slug": "declare",
     "section": "arrays"
   },
@@ -79,21 +80,7 @@ export const topics: Topic[] = [
       "System.out.println(num[3] + \" \" + num[4]",
       "   + \" \" + num[0]);"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[] num = new int[6];",
-      "      int i;",
-      "      num[3] = 65;",
-      "      i = 3;",
-      "      num[i] = 65;",
-      "      num[2 * i - 3] = 65;",
-      "      num[5] = 56;",
-      "      num[5] = num[2] + num[3];",
-      "      System.out.println(num[3] + \" \" + num[4] + \" \" + num[0]);",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "Syntax",
@@ -105,6 +92,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "counting starts at 0",
+    "output": "65 0 0",
     "slug": "access",
     "section": "arrays"
   },
@@ -120,6 +108,7 @@ export const topics: Topic[] = [
     ],
     "callout": "Output: Element at index 0: 100 and Element at index 1: 200. No loop is used because only 2 values are assigned. To assign, accept or display many values, use loops.",
     "tip": "many values = use loops",
+    "output": "Element at index 0: 100\nElement at index 1: 200",
     "slug": "demo",
     "section": "arrays"
   },
@@ -133,18 +122,10 @@ export const topics: Topic[] = [
       "sales[0] = 12.4;",
       "sales[1] = 45.65;     // same as {12.4, 45.65}"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      double[] sales = {12.4, 45.67, 32.90, 78.9, 21.90};",
-      "      sales[0] = 12.4;",
-      "      sales[1] = 45.65;",
-      "      System.out.println(java.util.Arrays.toString(sales));",
-      "   }",
-      "}"
-    ],
+
     "callout": "Known values go between curly brackets, separated by commas. Partial initialisation: the lecture says the rest fill with 0. In Java write int[] list = new int[10]; then list[0] = 3; list[1] = 6; list[2] = 7; the unfilled boxes stay 0.",
     "tip": "int[10] list = {3,6,7} is not valid Java",
+    "output": "[12.4, 45.65, 32.9, 78.9, 21.9]",
     "slug": "initdecl",
     "section": "arrays"
   },
@@ -158,19 +139,7 @@ export const topics: Topic[] = [
       "for (index = 0; index < 10; index++)",
       "   System.out.println(sales[index] + \" \");  // print"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[] input = {12, 4, 9, 2, 15, 7, 3, 10, 5, 8};",
-      "      int[] sales = new int[10];",
-      "      int index;",
-      "      for (index = 0; index < 10; index++) sales[index] = 0;",
-      "      for (index = 0; index < 10; index++) sales[index] = input[index];",
-      "      for (index = 0; index < 10; index++)",
-      "         System.out.println(sales[index] + \" \");",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "Operations",
@@ -182,6 +151,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "one loop per job",
+    "output": "12\n4\n9\n2\n15\n7\n3\n10\n5\n8",
     "slug": "ops",
     "section": "arrays"
   },
@@ -199,22 +169,7 @@ export const topics: Topic[] = [
       "      maxIndex = index;",
       "largestSale = sales[maxIndex];"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[] sales = {12, 4, 9, 2, 15, 7, 3, 10, 5, 8};",
-      "      int sum = 0;",
-      "      for (int index = 0; index < 10; index++) sum += sales[index];",
-      "      double average = sum / 10.0;",
-      "      int maxIndex = 0;",
-      "      for (int index = 0; index < 10; index++)",
-      "         if (sales[maxIndex] < sales[index]) maxIndex = index;",
-      "      System.out.println(\"Sum = \" + sum);",
-      "      System.out.println(\"Average = \" + average);",
-      "      System.out.println(\"Largest = \" + sales[maxIndex]);",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "Sum + average",
@@ -226,6 +181,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "smallest: flip < to >",
+    "output": "Sum = 75\nAverage = 7.5\nLargest = 15",
     "slug": "loops",
     "section": "arrays"
   },
@@ -237,18 +193,7 @@ export const topics: Topic[] = [
       "   System.out.println(arr[i]);",
       "// i = 5 is out of bounds"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[] arr = {1, 2, 3, 4, 5};",
-      "      try {",
-      "         for (int i = 0; i <= arr.length; i++) System.out.println(arr[i]);",
-      "      } catch (ArrayIndexOutOfBoundsException e) {",
-      "         System.out.println(\"ArrayIndexOutOfBoundsException at index \" + arr.length);",
-      "      }",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "In bounds",
@@ -260,6 +205,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "use i < arr.length",
+    "output": "1\n2\n3\n4\n5\nArrayIndexOutOfBoundsException at index 5",
     "slug": "bounds",
     "section": "arrays"
   },
@@ -276,26 +222,7 @@ export const topics: Topic[] = [
       "answer = modifyArray(hour, 13);",
       "public int modifyArray(int hour[], int size)"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[] hour = new int[3];",
-      "      Main example = new Main();",
-      "      example.modifyArray(hour, 3);",
-      "      int answer = example.sumArray(hour, 3);",
-      "      System.out.println(\"Array = \" + java.util.Arrays.toString(hour));",
-      "      System.out.println(\"Sum = \" + answer);",
-      "   }",
-      "   public void modifyArray(int[] hour, int size) {",
-      "      for (int i = 0; i < size; i++) hour[i] = (i + 1) * 10;",
-      "   }",
-      "   public int sumArray(int[] hour, int size) {",
-      "      int sum = 0;",
-      "      for (int i = 0; i < size; i++) sum += hour[i];",
-      "      return sum;",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "Name + size",
@@ -307,6 +234,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "pass name + size",
+    "output": "Array = [10, 20, 30]\nSum = 60",
     "slug": "methods",
     "section": "arrays"
   },
@@ -324,25 +252,7 @@ export const topics: Topic[] = [
       "      list[index] = console.nextInt();",
       "}"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[] list = new int[4];",
-      "      Main example = new Main();",
-      "      example.fillArray(list, 3, new int[] {2, 4, 6});",
-      "      example.printArray(list);",
-      "   }",
-      "   public void printArray(int[] list) {",
-      "      for (int index = 0; index < list.length; index++)",
-      "         System.out.print(list[index] + \" \");",
-      "      System.out.println();",
-      "   }",
-      "   public void fillArray(int[] list, int numOfElements, int[] input) {",
-      "      for (int index = 0; index < numOfElements; index++)",
-      "         list[index] = input[index];",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "list.length",
@@ -354,6 +264,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "two ways to know the size",
+    "output": "2 4 6 0",
     "slug": "printfill",
     "section": "arrays"
   },
@@ -374,33 +285,7 @@ export const topics: Topic[] = [
       "   return maxIndex;",
       "}"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      Main example = new Main();",
-      "      int[] list = {4, 8, 2, 10, 3};",
-      "      int sum = example.sumArray(list, list.length);",
-      "      int largestIndex = example.indexLargestElement(list, list.length);",
-      "      System.out.println(\"Sum = \" + sum);",
-      "      System.out.println(\"Largest = \" + list[largestIndex]);",
-      "   }",
-      "",
-      "   public int sumArray(int[] list, int numOfElements) {",
-      "      int sum = 0;",
-      "      for (int index = 0; index < numOfElements; index++)",
-      "         sum = sum + list[index];",
-      "      return sum;",
-      "   }",
-      "",
-      "   public int indexLargestElement(int[] list, int n) {",
-      "      int maxIndex = 0;",
-      "      for (int index = 1; index < n; index++)",
-      "         if (list[maxIndex] < list[index])",
-      "            maxIndex = index;",
-      "      return maxIndex;",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "One element",
@@ -412,6 +297,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "return one value",
+    "output": "Sum = 27\nLargest = 10",
     "slug": "sumindex",
     "section": "arrays"
   },
@@ -426,17 +312,7 @@ export const topics: Topic[] = [
       "System.out.println(\"Average = \" + average);",
       "// 14+5+37+8+57 = 121, so 121 / 5 = 24.2"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      double[] price = {14, 5, 37, 8, 57};",
-      "      double sum = 0;",
-      "      for (int i = 0; i < price.length; i++) sum += price[i];",
-      "      double average = sum / price.length;",
-      "      System.out.println(\"Average = \" + average);",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "The question",
@@ -448,6 +324,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "try it yourself first",
+    "output": "Average = 24.2",
     "slug": "exercise",
     "section": "arrays"
   },
@@ -466,23 +343,7 @@ export const topics: Topic[] = [
       "check = areEqualArrays(listA, listB);",
       "if (check) { ... }"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[] listA = {1, 2, 3};",
-      "      int[] listB = {1, 2, 3};",
-      "      int[] listC = {1, 2, 4};",
-      "      System.out.println(areEqualArrays(listA, listB));",
-      "      System.out.println(areEqualArrays(listA, listC));",
-      "   }",
-      "   static boolean areEqualArrays(int[] firstArray, int[] secondArray) {",
-      "      if (firstArray.length != secondArray.length) return false;",
-      "      for (int index = 0; index < firstArray.length; index++)",
-      "         if (firstArray[index] != secondArray[index]) return false;",
-      "      return true;",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "How",
@@ -494,6 +355,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "== does not compare contents",
+    "output": "true\nfalse",
     "slug": "equal",
     "section": "arrays"
   },
@@ -520,22 +382,10 @@ export const topics: Topic[] = [
       "   return -1;",
       "}"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[] list = {35, 12, 27, 18, 45, 16, 38};",
-      "      System.out.println(linearSearch(list, 27));",
-      "      System.out.println(linearSearch(list, 10));",
-      "   }",
-      "   static int linearSearch(int[] list, int key) {",
-      "      for (int i = 0; i < list.length; i++)",
-      "         if (list[i] == key) return i;",
-      "      return -1;",
-      "   }",
-      "}"
-    ],
+
     "callout": "Search for 27: list[0] is not 27, list[1] is not 27, list[2] = 27, the search stops: successful. Search for 10: compared with every item, no data left: unsuccessful. Time: O(n).",
     "tip": "not found returns -1",
+    "output": "2\n-1",
     "slug": "search",
     "section": "arrays"
   },
@@ -561,6 +411,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "import java.util.Arrays",
+    "output": "Not on the list",
     "slug": "utils",
     "section": "arrays"
   },
@@ -572,17 +423,7 @@ export const topics: Topic[] = [
       "Arrays.fill(x, 90);         // all ten = 90",
       "Arrays.fill(x, 0, 4, 78);   // first four = 78"
     ],
-    "run": [
-      "import java.util.Arrays;",
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[] x = {67,89,43,21,54,76,87,90,24,71};",
-      "      Arrays.fill(x, 90);",
-      "      Arrays.fill(x, 0, 4, 78);",
-      "      System.out.println(Arrays.toString(x));",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "fill(x, 90)",
@@ -594,6 +435,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "end index is not included",
+    "output": "[78, 78, 78, 78, 90, 90, 90, 90, 90, 90]",
     "slug": "fill",
     "section": "arrays"
   },
@@ -675,17 +517,7 @@ export const topics: Topic[] = [
       "sales[5][3] = 25.75;",
       "// arrayName[indexExp1][indexExp2]"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      double[][] sales = new double[10][5];",
-      "      sales[5][3] = 25.75;",
-      "      System.out.println(\"Rows = \" + sales.length);",
-      "      System.out.println(\"Columns = \" + sales[0].length);",
-      "      System.out.println(\"sales[5][3] = \" + sales[5][3]);",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "Row first",
@@ -697,6 +529,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "[row][column]",
+    "output": "Rows = 10\nColumns = 5\nsales[5][3] = 25.75",
     "slug": "twodsyntax",
     "section": "arrays"
   },
@@ -712,19 +545,7 @@ export const topics: Topic[] = [
       "board[0] = new int[6];",
       "board[1] = new int[2];"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[][] matrix = new int[20][15];",
-      "      int[][] board = new int[5][];",
-      "      board[0] = new int[6];",
-      "      board[1] = new int[2];",
-      "      System.out.println(\"matrix rows = \" + matrix.length);",
-      "      System.out.println(\"matrix columns = \" + matrix[0].length);",
-      "      System.out.println(\"board row lengths = \" + board[0].length + \", \" + board[1].length);",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "Rows are arrays",
@@ -736,6 +557,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "matrix.length = rows",
+    "output": "matrix rows = 20\nmatrix columns = 15\nboard row lengths = 6, 2",
     "slug": "twod",
     "section": "arrays"
   },
@@ -751,17 +573,7 @@ export const topics: Topic[] = [
       "                 {15, 25},",
       "                 {4, 23, 45}};"
     ],
-    "run": [
-      "import java.util.Arrays;",
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[][] board = {{2, 3, 1}, {15, 25, 13}, {20, 4, 7}, {11, 18, 14}};",
-      "      int[][] table = {{2, 1, 3, 5}, {15, 25}, {4, 23, 45}};",
-      "      System.out.println(java.util.Arrays.deepToString(board));",
-      "      System.out.println(java.util.Arrays.deepToString(table));",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "Rule 1",
@@ -773,6 +585,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "braces inside braces",
+    "output": "[[2, 3, 1], [15, 25, 13], [20, 4, 7], [11, 18, 14]]\n[[2, 1, 3, 5], [15, 25], [4, 23, 45]]",
     "slug": "twodinit",
     "section": "arrays"
   },
@@ -790,19 +603,7 @@ export const topics: Topic[] = [
       "   System.out.println();",
       "}"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[][] matrix = {{1, 2, 3}, {4, 5, 6}};",
-      "      for (int row = 0; row < matrix.length; row++)",
-      "         for (int col = 0; col < matrix[row].length; col++) matrix[row][col] = 10;",
-      "      for (int[] row : matrix) {",
-      "         for (int value : row) System.out.print(value + \" \");",
-      "         System.out.println();",
-      "      }",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "3 ways",
@@ -814,6 +615,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "outer = rows, inner = columns",
+    "output": "10 10 10\n10 10 10",
     "slug": "twodproc",
     "section": "arrays"
   },
@@ -833,25 +635,10 @@ export const topics: Topic[] = [
       "   System.out.println(\"Sum of column \" + (col + 1) + \" = \" + sum);",
       "}"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[][] matrix = {{1, 2, 3}, {4, 5, 6}};",
-      "      for (int row = 0; row < matrix.length; row++) {",
-      "         int sum = 0;",
-      "         for (int col = 0; col < matrix[row].length; col++) sum += matrix[row][col];",
-      "         System.out.println(\"Sum of row \" + (row + 1) + \" = \" + sum);",
-      "      }",
-      "      for (int col = 0; col < matrix[0].length; col++) {",
-      "         int sum = 0;",
-      "         for (int row = 0; row < matrix.length; row++) sum += matrix[row][col];",
-      "         System.out.println(\"Sum of column \" + (col + 1) + \" = \" + sum);",
-      "      }",
-      "   }",
-      "}"
-    ],
+
     "callout": "Row sums reset sum to 0 for each row. For columns the outer loop is the column. The lecture slide has typos (matrix[].length, matrix[1][5]); use matrix[row].length and matrix[row][col].",
     "tip": "reset sum = 0 each time",
+    "output": "Sum of row 1 = 6\nSum of row 2 = 15\nSum of column 1 = 5\nSum of column 2 = 7\nSum of column 3 = 9",
     "slug": "sumrc",
     "section": "arrays"
   },
@@ -867,21 +654,10 @@ export const topics: Topic[] = [
       "      + (row + 1) + \" = \" + largest);",
       "}"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[][] matrix = {{4, 9, 2}, {7, 3, 8}, {1, 6, 5}};",
-      "      for (int row = 0; row < matrix.length; row++) {",
-      "         int largest = matrix[row][0];",
-      "         for (int col = 1; col < matrix[row].length; col++)",
-      "            if (largest < matrix[row][col]) largest = matrix[row][col];",
-      "         System.out.println(\"The largest element of row \" + (row + 1) + \" = \" + largest);",
-      "      }",
-      "   }",
-      "}"
-    ],
+
     "callout": "For each column: largest = matrix[0][col], then the inner loop runs through the rows from 1 and updates largest.",
     "tip": "start from the first element",
+    "output": "The largest element of row 1 = 9\nThe largest element of row 2 = 8\nThe largest element of row 3 = 6",
     "slug": "largestrc",
     "section": "arrays"
   },
@@ -896,23 +672,10 @@ export const topics: Topic[] = [
       "   }",
       "}"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[][] matrix = {{1, 2, 3}, {4, 5, 6}};",
-      "      printMatrix(matrix);",
-      "   }",
-      "   public static void printMatrix(int[][] matrix) {",
-      "      for (int row = 0; row < matrix.length; row++) {",
-      "         for (int col = 0; col < matrix[row].length; col++)",
-      "            System.out.print(matrix[row][col] + \" \");",
-      "         System.out.println();",
-      "      }",
-      "   }",
-      "}"
-    ],
+
     "callout": "A 2D array is passed as int[][] matrix. In the lecture example, TwoDArrays calls printArray(x) on a 6 x 5 table and prints each row on its own line. sumRows and largestInRows are written the same way.",
     "tip": "parameter is int[][]",
+    "output": "1 2 3\n4 5 6",
     "slug": "pass2d",
     "section": "arrays"
   },
@@ -977,20 +740,7 @@ export const topics: Topic[] = [
       "   // statements",
       "}"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      try {",
-      "         int value = 10 / 0;",
-      "         System.out.println(value);",
-      "      } catch (ArithmeticException e) {",
-      "         System.out.println(\"Caught \" + e.getClass().getSimpleName());",
-      "      } finally {",
-      "         System.out.println(\"Finally runs\");",
-      "      }",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "try",
@@ -1002,6 +752,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "finally is optional",
+    "output": "Caught ArithmeticException\nFinally runs",
     "slug": "ex-try",
     "section": "exceptions"
   },
@@ -1044,20 +795,7 @@ export const topics: Topic[] = [
       "   System.out.println(\"The program ended...\");",
       "}"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      int[] arr = {1, 2, 3, 4, 5};",
-      "      try {",
-      "         for (int i = 0; i <= arr.length; i++) System.out.println(arr[i]);",
-      "      } catch (ArrayIndexOutOfBoundsException e) {",
-      "         System.out.println(\"You may access an array element that doesn't exist.\");",
-      "      } finally {",
-      "         System.out.println(\"The program ended...\");",
-      "      }",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "Without try",
@@ -1069,6 +807,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "i <= length is the bug",
+    "output": "1\n2\n3\n4\n5\nYou may access an array element that doesn't exist.\nThe program ended...",
     "slug": "x-array",
     "section": "exceptions"
   },
@@ -1078,21 +817,10 @@ export const topics: Topic[] = [
       "catch (ArithmeticException e) { ... }  // subclass first",
       "catch (Exception e) { ... }            // superclass last"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      try {",
-      "         throw new ArithmeticException(\"demo\");",
-      "      } catch (ArithmeticException e) {",
-      "         System.out.println(\"Caught specific exception\");",
-      "      } catch (Exception e) {",
-      "         System.out.println(\"Caught general exception\");",
-      "      }",
-      "   }",
-      "}"
-    ],
+
     "callout": "The heading of a catch block specifies the type it handles. Declaring Exception catches all types, because Exception is the superclass of all exception classes. A superclass reference can point to a subclass object, so subclass catch blocks go BEFORE superclass catch blocks.",
     "tip": "specific first, Exception last",
+    "output": "Caught specific exception",
     "slug": "ex-flow",
     "section": "exceptions"
   },
@@ -1263,20 +991,7 @@ export const topics: Topic[] = [
       "      System.out.println(\"Exception \" + eRef.toString());",
       "}"
     ],
-    "run": [
-      "public class Main {",
-      "   public static void main(String[] args) {",
-      "      handle(new ArithmeticException(\"/ by zero\"));",
-      "      handle(new java.util.InputMismatchException(\"bad input\"));",
-      "   }",
-      "   static void handle(Exception eRef) {",
-      "      if (eRef instanceof ArithmeticException)",
-      "         System.out.println(\"Exception \" + eRef);",
-      "      else if (eRef instanceof java.util.InputMismatchException)",
-      "         System.out.println(\"Exception \" + eRef);",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "instanceof",
@@ -1288,6 +1003,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "combine catch blocks",
+    "output": "Exception java.lang.ArithmeticException: / by zero\nException java.util.InputMismatchException: bad input",
     "slug": "x-inst",
     "section": "exceptions"
   },
@@ -1309,26 +1025,7 @@ export const topics: Topic[] = [
       "   }",
       "}"
     ],
-    "run": [
-      "public class RethrowExceptionExmp1 {",
-      "   static java.util.Scanner console = new java.util.Scanner(\"not a number\");",
-      "   public static void main(String[] args) {",
-      "      try {",
-      "         int number = getNumber();",
-      "         System.out.println(\"number = \" + number);",
-      "      } catch (java.util.InputMismatchException e) {",
-      "         System.out.println(\"Exception \" + e.getClass().getSimpleName());",
-      "      }",
-      "   }",
-      "   static int getNumber() throws java.util.InputMismatchException {",
-      "      try {",
-      "         return console.nextInt();",
-      "      } catch (java.util.InputMismatchException e) {",
-      "         throw e;",
-      "      }",
-      "   }",
-      "}"
-    ],
+
     "points": [
       {
         "title": "Rethrow",
@@ -1340,6 +1037,7 @@ export const topics: Topic[] = [
       }
     ],
     "tip": "throw makes, throws warns",
+    "output": "Exception InputMismatchException",
     "slug": "ex-throw",
     "section": "exceptions"
   },
