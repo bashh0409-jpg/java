@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@theme {
+  --color-brand: #2b2bd9;
+  --color-tint: #e6e8ff;
+  --color-soft: #eef0ff;
+  --color-ink: #1a1a1a;
+}
+
+@theme inline {
+  --font-sans: var(--font-space), ui-monospace, monospace;
+}
