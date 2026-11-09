@@ -17,7 +17,7 @@ export function CodeBlock({
 
   return (
     <div className="my-6">
-      <div className="flex items-center justify-between bg-in px-4 py-1.5 text-sm text-">
+      <div className="flex items-center justify-between bg-in px- py-1.5 text-sm text-">
         <span>{title ?? "Java"}</span>
         <button
           type="button"
